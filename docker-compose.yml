@@ -1,24 +1,18 @@
 version: '2'
 
 services:
-    git-server:
+    hugogit:
         build: ./hugogit
         restart: always
         container_name: ${CONTAINER_NAME_GIT}
+        expose:
+            - 80
         ports:
             - "${GIT_PORT}:22"
         volumes:
             - ./keys:/git-server/keys
             - ./repos:/git-server/repos
             - ./html:/var/www/html
-    static:
-        image: nginx
-        container_name: ${CONTAINER_NAME_WEB}
-        expose:
-            - 80
-        restart: always
-        volumes:
-            - ./html:/usr/share/nginx/html
         environment:
             VIRTUAL_HOST: ${URL}
 
