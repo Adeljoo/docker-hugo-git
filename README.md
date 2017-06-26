@@ -16,4 +16,5 @@ GIT_PORT=2222
 
 * Copy a bare clone of your repository into the `repos` folder and rename it to `repo.git`
 * Copy the file `post-receive.tmpl` into the your repo folder as `hooks/post-receive`, replace the YOURREPO placeholder and make it executable.
+* Run `docker-compose up -d` to start the container and link it with [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)
 * The push/pull url is: ssh://git@yourdomain.de:yourport/git-server/repos/repo.git
