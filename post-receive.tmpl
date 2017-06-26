@@ -1,0 +1,16 @@
+#!/bin/sh
+
+GIT_REPO=/git-server/repos/YOURREPO
+TMP_GIT_CLONE=/tmp/clonedrepo
+PUBLIC_WWW=/var/www/html
+
+# Clone repo in tmp dir
+git clone $GIT_REPO $TMP_GIT_CLONE
+
+# Build site from tmp dir into $PUBLIC_WWW
+hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW
+
+# Delete tmp dir
+rm -Rf $TMP_GIT_CLONE
+
+exit
