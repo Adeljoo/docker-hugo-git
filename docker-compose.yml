@@ -4,7 +4,7 @@ services:
     hugogit:
         build: ./hugogit
         restart: always
-        container_name: ${CONTAINER_NAME_GIT}
+        container_name: ${CONTAINER_NAME}
         expose:
             - 80
         ports:
