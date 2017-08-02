@@ -1,7 +1,7 @@
 FROM alpine:3.4
 
 # Install HUGO
-ENV HUGO_VERSION 0.14
+ENV HUGO_VERSION 0.25.1
 
 RUN set -x && \
   apk add --update wget ca-certificates && \
